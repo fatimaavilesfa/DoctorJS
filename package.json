@@ -1,0 +1,50 @@
+{
+  "name": "doctorjs",
+  "version": "1.0.0",
+  "description": "A personalized doctor for diabetics ",
+  "homepage": "https://github.com/KatiesCode/DoctorJS#readme",
+  "main": "Index.js",
+  "scripts": {
+    "dev": "webpack --config webpack.config.js --watch --mode development",
+    "frontend": "webpack-dev-server --hot --mode development",
+    "start-dev": "nodemon server/server.js",
+    "build": "webpack --config webpack.config.prod.js --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KatiesCode/DoctorJS.git"
+  },
+  "author": "KatiesCode",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KatiesCode/DoctorJS/issues"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "express": "^4.16.3",
+    "mysql2": "^1.6.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-router-dom": "^4.3.1",
+    "webpack-command": "^0.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-react": "^7.11.1",
+    "node-sass": "^4.9.2",
+    "postcss-loader": "^2.1.6",
+    "react-hot-loader": "^4.3.6",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^2.1.5",
+    "webpack-dev-server": "^3.1.7"
+  }
+}
