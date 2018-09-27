@@ -4,9 +4,10 @@ compiled/
 client/dist/bundle.js
 client/dist/bundle.js.map
 pic-gallery/
+package-lock.json
 
 #Packages
-package-lock.json
+
 
 ## NPM ##
 node_modules/
