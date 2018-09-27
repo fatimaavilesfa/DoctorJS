@@ -5,6 +5,8 @@ client/dist/bundle.js
 client/dist/bundle.js.map
 pic-gallery/
 
+#Packages
+package-lock.json
 
 ## NPM ##
 node_modules/
