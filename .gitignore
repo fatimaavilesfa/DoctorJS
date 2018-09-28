@@ -4,6 +4,7 @@ compiled/
 client/dist/bundle.js
 client/dist/bundle.js.map
 pic-gallery/
+yarn.lock
 
 #Packages
 package-lock.json
