@@ -4,7 +4,13 @@ import { hot } from "react-hot-loader";
 
 class App extends Component {
   render() {
-    return <div>Welcome to DoctorJS!</div>;
+    return (
+      <div>
+        <h1>
+          <center>Welcome to DoctorJS!</center>
+        </h1>
+      </div>
+    );
   }
 }
 //hot export works with RHL. Remove line 11 when starting fullstack integration
