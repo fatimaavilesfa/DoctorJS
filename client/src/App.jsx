@@ -11,6 +11,7 @@ class App extends Component {
         </h1>
       </div>
     );
+
   }
 }
 //hot export works with RHL. Remove line 11 when starting fullstack integration

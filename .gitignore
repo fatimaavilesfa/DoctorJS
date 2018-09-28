@@ -8,6 +8,9 @@ yarn.lock
 
 #Packages
 package-lock.json
+yarn.lock
+#Packages
+
 
 ## NPM ##
 node_modules/
@@ -32,3 +35,4 @@ lib-cov
 
 # Coverage directory used by tools like istanbul
 coverage
+debug.log
