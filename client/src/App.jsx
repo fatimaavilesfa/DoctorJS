@@ -4,7 +4,9 @@ import { hot } from 'react-hot-loader';
 
 class App extends Component {
   render() {
-    return <div>Welcome to a Modern Minimal React Boilerplate</div>;
+    return <div>
+        <center>Welcome to DoctorJS!</center>
+      </div>;
   }
 }
 //hot export works with RHL. Remove line 11 when starting fullstack integration
