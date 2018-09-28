@@ -1,12 +1,17 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 //RHL only for front end development
-import { hot } from 'react-hot-loader';
+import { hot } from "react-hot-loader";
 
 class App extends Component {
   render() {
-    return <div>
-        <center>Welcome to DoctorJS!</center>
-      </div>;
+    return (
+      <div>
+        <h1>
+          <center>Welcome to DoctorJS!</center>
+        </h1>
+      </div>
+    );
+
   }
 }
 //hot export works with RHL. Remove line 11 when starting fullstack integration
