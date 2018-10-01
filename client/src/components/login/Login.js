@@ -14,7 +14,7 @@ class Login extends Component {
     };
   }
   handleClick(event) {
-    var apiBaseUrl = "http://localhost:3000/api/ ";
+    var apiBaseUrl = "http://localhost:3000/api/";
     var self = this;
     var payload = {
       email: this.state.username,
@@ -51,7 +51,7 @@ class Login extends Component {
       <div>
         <MuiThemeProvider>
           <div>
-            <AppBar title="Login" />
+            <AppBar title="Welcome to DoctorJS" />
             <TextField
               hintText="Enter your Username"
               floatingLabelText="Username"

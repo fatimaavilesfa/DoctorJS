@@ -64,7 +64,7 @@ class Loginscreen extends Component {
                 label={this.state.buttonLabel}
                 primary={true}
                 style={style}
-                onClick={event => this.handleClicl(event)}
+                onClick={event => this.handleClick(event)}
               />
             </div>
           </MuiThemeProvider>
