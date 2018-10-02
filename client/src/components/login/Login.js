@@ -4,6 +4,7 @@ import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import axios from "axios";
+import UploadScreen from "./PrimaryScreen.js";
 
 class Login extends Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class Login extends Component {
           console.log("Login Succesful");
           var upLoadScreen = [];
           upLoadScreen.push(
-            <upLoadScreen appContext={self.props.appContext} />
+            <UploadScreen appContext={self.props.appContext} />
           );
           self.props.appContext.setState({
             loginPage: [],
