@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import injectTapEventPlugin from "react-tap-event-plugin";
 
-import Loginscreen from "./components/login/Loginscreen.js";
-import PrimaryScreen from "./components/login/PrimaryScreen";
-injectTapEventPlugin();
+import Loginscreen from "./components/login/LoginScreen.js";
+
+//injectTapEventPlugin();
 
 class App extends Component {
   constructor(props) {
