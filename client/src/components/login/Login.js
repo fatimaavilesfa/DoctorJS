@@ -28,7 +28,7 @@ class Login extends Component {
           console.log("Login Succesful");
           var upLoadScreen = [];
           upLoadScreen.push(
-            <upLoadScreen appContext={self.props.appContext} />
+            <UploadScreen appContext={self.props.appContext} />
           );
           self.props.appContext.setState({
             loginPage: [],
