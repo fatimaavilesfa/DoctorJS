@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import injectTapEventPlugin from "react-tap-event-plugin";
 
-import Loginscreen from "./components/login/LoginScreen.js";
+import LoginScreen from "./components/login/LoginScreen.js";
 
 //injectTapEventPlugin();
 
@@ -15,7 +15,7 @@ class App extends Component {
   }
   UNSAFE_componentWillMount() {
     var loginPage = [];
-    loginPage.push(<Loginscreen parentContext={this} />);
+    loginPage.push(<LoginScreen parentContext={this} />);
     this.setState({
       loginPage: loginPage
     });

@@ -1,11 +1,11 @@
-import React, { Component } from "react";
+import React, { Component, Fragment} from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import RaisedButton from "material-ui/RaisedButton";
 
 import Login from "./Login.js";
 import Register from "./Register.js";
 
-class Loginscreen extends Component {
+class LoginScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -77,4 +77,4 @@ const style = {
   margin: 15
 };
 
-export default Loginscreen;
+export default LoginScreen;
