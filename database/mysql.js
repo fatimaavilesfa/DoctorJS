@@ -6,7 +6,7 @@ const mysql = require("mysql2");
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "almendra.4",
+  password: "password",
   database: "doctorJS"
 });
 connection.connect(function(err) {
