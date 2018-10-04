@@ -24,7 +24,6 @@ class Login extends Component {
     axios
       .post(apiBaseUrl + "login", payload)
       .then(function(response) {
-        console.log(response);
         if (response.data.code == 200) {
           console.log("Login Succesful");
           var upLoadScreen = [];
@@ -53,7 +52,7 @@ class Login extends Component {
         <MuiThemeProvider>
           <div>
             <TextField
-              hintText="Enter your Username"
+              hintText="Enter your Email"
               floatingLabelText="Username"
               onChange={(event, newValue) =>
                 this.setState({ username: newValue })
