@@ -17,7 +17,7 @@ class Loginscreen extends Component {
       isLogin: true
     };
   }
-  UNSAFE_componentWillMount() {
+  componentDidMount() {
     var loginscreen = [];
     loginscreen.push(
       <Login parentContext={this} appContext={this.props.parentContext} />

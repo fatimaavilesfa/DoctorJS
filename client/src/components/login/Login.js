@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import AppBar from "material-ui/AppBar";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import axios from "axios";
@@ -15,6 +14,7 @@ class Login extends Component {
     };
   }
   handleClick(event) {
+    event.preventDefault();
     var apiBaseUrl = "http://localhost:3000/api/";
     var self = this;
     var payload = {
@@ -52,7 +52,6 @@ class Login extends Component {
       <div>
         <MuiThemeProvider>
           <div>
-            <AppBar title="Welcome to DoctorJS" />
             <TextField
               hintText="Enter your Username"
               floatingLabelText="Username"

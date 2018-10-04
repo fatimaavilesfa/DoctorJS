@@ -9,19 +9,12 @@
     "sourceType": "module",
     "ecmaVersion": 2018
   },
-  "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
-  "plugins": [
-    "react"
-  ],
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "plugins": ["react"],
   "rules": {
     "no-console": "off",
-    "strict": [
-      "error",
-      "global"
-    ],
-    "curly": "warn"
+    "strict": ["error", "global"],
+    "curly": "warn",
+    "react/prop-types": 0
   }
 }

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import injectTapEventPlugin from "react-tap-event-plugin";
-
+import AppBar from "material-ui/AppBar";
+import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import Loginscreen from "./components/login/Loginscreen.js";
-import PrimaryScreen from "./components/login/PrimaryScreen";
+import UploadScreen from "./components/login/PrimaryScreen";
+import Logout from "../src/components/login/Logout.js";
 injectTapEventPlugin();
 
 class App extends Component {
@@ -10,22 +12,45 @@ class App extends Component {
     super(props);
     this.state = {
       loginPage: [],
-      uploadScreen: []
+      uploadScreen: [],
+      username: "",
+      password: "",
+      isLogin: false
     };
+    this.logout = this.logout.bind(this);
   }
-  UNSAFE_componentWillMount() {
-    var loginPage = [];
-    loginPage.push(<Loginscreen parentContext={this} />);
+  logout() {
+    console.log("LogOut func");
     this.setState({
-      loginPage: loginPage
+      email: "",
+      password: "",
+      isLogin: false
+    });
+    console.log(this.state);
+  }
+  componentDidMount() {
+    var loginPage = [];
+    var uploadScreen = [];
+    loginPage.push(<Loginscreen parentContext={this} />);
+    uploadScreen.push(<UploadScreen parentContext={this} />);
+    this.setState({
+      loginPage: loginPage,
+      uploadScreen: uploadScreen
     });
   }
   render() {
     return (
-      <div className="App">
-        {this.state.loginPage}
-        {this.state.uploadScreen}
-      </div>
+      <MuiThemeProvider>
+        <div>
+          <AppBar title="Welcome to DoctorJS" />
+          <Logout logout={this.logout} />
+          <div className="App">
+            {this.state.isLogin
+              ? this.state.uploadScreen
+              : this.state.loginPage}
+          </div>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
