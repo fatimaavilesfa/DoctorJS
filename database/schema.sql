@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS doctorJS;
-
 CREATE DATABASE doctorJS;
 
 USE doctorJS;
