@@ -16,6 +16,7 @@ class Register extends Component {
     };
   }
   handleClick(event) {
+    event.preventDefault();
     var apiBaseUrl = 'http://localhost:3000/api/';
     console.log(
       'VALUES',

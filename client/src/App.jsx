@@ -1,30 +1,41 @@
 import React, { Component } from 'react';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import Loginscreen from './components/login/LoginScreen';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import AppBar from 'material-ui/AppBar';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Loginscreen from './components/login/Loginscreen.js';
 import UploadScreen from './components/login/PrimaryScreen';
+import Logout from '../src/components/login/Logout.js';
+injectTapEventPlugin();
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loginPage: [],
+      uploadScreen: [],
       username: '',
-      email: '',
-      isLoggedIn: false,
+      password: '',
+      isLogin: false,
     };
-    this.logOut = this.logOut.bind(this);
+    this.logout = this.logout.bind(this);
   }
-
-  componentDidMount() {}
-
-  logOut(e) {
-    e.preventDefault();
-    console.log('====================================');
-    console.log('Firing LogOut Func');
-    console.log('====================================');
+  logout() {
+    console.log('LogOut func');
     this.setState({
-      username: '',
       email: '',
-      isLoggedIn: false,
+      password: '',
+      isLogin: false,
+    });
+    console.log(this.state);
+  }
+  componentDidMount() {
+    var loginPage = [];
+    var uploadScreen = [];
+    loginPage.push(<Loginscreen parentContext={this} />);
+    uploadScreen.push(<UploadScreen parentContext={this} />);
+    this.setState({
+      loginPage: loginPage,
+      uploadScreen: uploadScreen,
     });
     console.log(this.state);
   }
@@ -35,10 +46,14 @@ class App extends Component {
     const LoggedOut = !isLoggedIn && <Loginscreen />;
     return (
       <MuiThemeProvider>
-        <div className="App">
-          {LoggedOut}
-          {LoggedIn}
-          <button onClick={this.logOut} />
+        <div>
+          <AppBar title="Welcome to DoctorJS" />
+          <Logout logout={this.logout} />
+          <div className="App">
+            {this.state.isLogin
+              ? this.state.uploadScreen
+              : this.state.loginPage}
+          </div>
         </div>
       </MuiThemeProvider>
     );
