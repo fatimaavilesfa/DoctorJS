@@ -27,8 +27,8 @@ class Loginscreen extends Component {
       loginmessage: loginmessage,
     });
   }
-  handleClick(event) {
-    console.log('EVENT', event);
+
+  handleClick() {
     var loginmessage;
     if (this.state.isLogin) {
       var loginscreen = [];
@@ -51,6 +51,7 @@ class Loginscreen extends Component {
       });
     }
   }
+
   render() {
     return (
       <div className="loginscreen">
