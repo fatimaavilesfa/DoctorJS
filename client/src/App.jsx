@@ -3,7 +3,7 @@ import injectTapEventPlugin from "react-tap-event-plugin";
 
 import LoginScreen from "./components/login/LoginScreen.js";
 
-//injectTapEventPlugin();
+
 
 class App extends Component {
   constructor(props) {

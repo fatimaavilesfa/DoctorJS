@@ -14,7 +14,7 @@ class Login extends Component {
       password: ""
     };
   }
-  handleClick(event) {
+  handleClick() {
     var apiBaseUrl = "http://localhost:3000/api/";
     var self = this;
     var payload = {

@@ -1,25 +1,26 @@
-import React from "react";
-//import $ from "jquery";
-import axios from "axios";
+import React, { Component, Fragment} from "react";
+import $ from "jquery";
+//import axios from "axios";
 
-class SugarSub extends React.Component {
+class SugarSub extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      When: "",
-      Glucose: ""
+      whenMesuare: undefined,
+      Glucose: 0
     };
     
-    this.handleWhen = this.handleWhen.bind(this);
+    this.handleWhenMeasure = this.handleWhenMeasure.bind(this);
     this.handleGlucose = this.handleGlucose.bind(this);
     this.submitLevel = this.submitLevel.bind(this);
-   
+    this.addLevel = this.addLevel.bind(this);
   }
 
-  handleWhen(e) {
+  handleWhenMeasure(e) {
     e.preventDefault();
+    console.log("this is the event ", e.target.value)
     this.setState({
-      When: e.target.value
+      whenMesuare: e.target.value
     });
   }
 
@@ -34,56 +35,47 @@ class SugarSub extends React.Component {
 
  
 
-  addItem(When, Glucose) {
+  addLevel(whenMesuare, Glucose) {
     $.ajax({
-    url:'/items',
+    url:'/submitLevel',
     type: "POST",
     contentType: 'application/json',
     data: JSON.stringify({
-      name: When,
-      descrip: Glucose,
-      
+      whenMesuare: whenMesuare,
+      Glucose: Glucose
     }),
     success:(data)=> {
     },
-    error: (xhr,status,error) => {
+    error: (xhr, status, error) => {
     }
   });
 }
    
 
-  submitItem(event) {
-    event.preventDefault();
-    this.addItem(this.state.When, this.state.Glucose);
-
-    this.setState({
-      When: "",
-      Glucose: ""
-    });
-    alert('Success!')
-  }
-
   submitLevel(event) {
     event.preventDefault();
-    this.addItem(this.state.When, this.state.Glucose);
+    this.addLevel(this.state.whenMesuare, this.state.Glucose);
+    alert(this.state.whenMesuare,);
     this.setState({
-        When: "",
-        Glucose: ""
-      });
-      alert('Success!')
-    }
+      Glucose: 0
+    });
+   
+  }
+
+
+
 
 
   render() {
     return (
-      <div>
+      <Fragment>
       <h4>When:
-      <select value={this.state.When} onChange={this.handleWhen}>
+      <select onChange={this.handleWhenMeasure} value={this.state.whenMesuare} type = "select">
         
-        <option>Before Breakfast</option>
+        <option  >Before Breakfast</option>
         <option>Before Lunch</option>
         <option>Before Dinner</option>
-        <option>1Hr.After Meal</option>
+        <option>1Hr.After Meal</option> 
         <option>2Hrs. After Meal</option>
         <option>Before Physical Activity</option>
         <option>During Physical Activity</option>
@@ -98,12 +90,12 @@ class SugarSub extends React.Component {
         <h4>Glucose Level:
         <input
           value={this.state.Glucose}
-          placeholder=""
+          placeholder="000"
           onChange={this.handleGlucose}
         /></h4>
         <button onClick={this.submitLevel}>Submit</button>
 
-      </div>
+      </Fragment>
     );
   }
 }

@@ -11,9 +11,9 @@ const connection = mysql.createConnection({
 });
 connection.connect(function(err) {
   if (!err) {
-    console.log("Database is is connected...nn");
+    console.log("Database is  connected");
   } else {
-    console.log("Error connecting database....nn");
+    console.log("Error connecting database");
   }
 });
 
@@ -86,5 +86,54 @@ const userLogin = function(req, res) {
   });
 };
 
+
+// const insertGlucose = function(req, res) {
+//   var today = new Date();
+//   var glucose = {
+//     when_mesuare: req.body.when_mesuare,
+//     glucose: req.body.glucose,
+//     created: today,
+    
+//   };
+//   connection.query("INSERT INTO glucose SET ?", glucose, function(
+//     error,
+//     results,
+//     fields
+//   ) {
+//     if (error) {
+//       console.log("ERROR OCURRED", error);
+//       res.send({
+//         code: 400,
+//         failed: "error ocurred"
+//       });
+//     } else {
+//       console.log("THE SOLUTION IS: ", results);
+//       res.send({
+//         code: 200,
+//         sucess: "Glucose Level Submited"
+//       });
+//     }
+//   });
+// };
+
+
+
+const insertGlucose = function(when_mesuare, glucose, created, callback) {  
+  
+  connection.query(
+    'INSERT INTO glucose (when_mesuare, glucose, created) VALUES (?, ?, ?)',
+    [when_mesuare, glucose, created],
+    (err, results, fields) => {
+      if (err) {
+        callback(err, null);
+      } else {
+        console.log(results);
+        callback(null, results);
+      }
+    }
+  );
+};
+
 module.exports.userRegister = userRegister;
 module.exports.userLogin = userLogin;
+module.exports.insertGlucose = insertGlucose;
