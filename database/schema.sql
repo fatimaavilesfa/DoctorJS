@@ -1,5 +1,3 @@
-DROP DATABASE IF EXISTS doctorJS;
-
 CREATE DATABASE doctorJS;
 
 USE doctorJS;
@@ -22,5 +20,6 @@ CREATE TABLE glucose (
   created datetime NOT NULL,
   PRIMARY KEY (id)
 );
+
 
 

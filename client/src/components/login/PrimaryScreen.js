@@ -14,6 +14,7 @@ class UploadScreen extends Component {
       </div>
       </Fragment>
     );
+
   }
 }
 export default UploadScreen;
